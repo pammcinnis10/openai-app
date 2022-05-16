@@ -5,6 +5,7 @@ import openAI from "./openAi";
 
 class App extends React.Component {
   state = {
+    formLoading: false,
     // array of { prompt: 'hello?', completion: 'hi!' }
     promptsCompletions: [
       {
@@ -19,6 +20,7 @@ class App extends React.Component {
   };
 
   handleQuestion = (questionValue) => {
+    this.setState({ formLoading: true });
     openAI(questionValue).then((response) => {
       const obj = {
         prompt: questionValue,
@@ -27,6 +29,7 @@ class App extends React.Component {
       this.setState(
         {
           promptsCompletions: [obj, ...this.state.promptsCompletions],
+          formLoading: false,
         },
         () => console.log(this.state)
       );
@@ -47,8 +50,7 @@ class App extends React.Component {
           */}
         <QuestionForm
           onSubmit={this.handleQuestion}
-          matt={"here!"}
-          pam={"yo!"}
+          loading={this.state.formLoading}
         />
 
         <ul>

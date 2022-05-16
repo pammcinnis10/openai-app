@@ -3,8 +3,7 @@ const openAI = (question) => {
   return fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
     method: "POST",
     headers: {
-      Authorization:
-        "Bearer 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",
+      Authorization: `Bearer ${process.env.REACT_APP_OPENAI_KEY}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
