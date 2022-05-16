@@ -1,5 +1,4 @@
-import React from 'react';
-import './App.css';
+import React from "react";
 
 class Response extends React.Component {
   constructor(props) {
@@ -7,14 +6,11 @@ class Response extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
     };
   }
 
-
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
   render() {
     const { error, isLoaded, items } = this.state;
     if (error) {
@@ -23,7 +19,6 @@ class Response extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-         
         <ul>
           {items.map((item, index) => (
             <li className="text-3xl font-bold underline" key={index}>
@@ -38,8 +33,6 @@ class Response extends React.Component {
 
 export default Response;
 
-
 // create form to input prompt
 // capture prompt as variable and insert it into body of fetch request
 // display prompt with answer in DOM - needs to be saved in a DOM element so it stays on the page when new prompts and responses are added
-

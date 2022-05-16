@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import QuestionForm from "./QuestionForm";
 import Response from "./Response";
@@ -29,31 +28,30 @@ class App extends React.Component {
   render() {
     // console.log(this.state);
     return (
-      <div className="App">
-        <header className="App-header">
-          {/* 
+      <div className="container mx-auto">
+        <h1 className="text-xl font-bold">Questions & Answers!</h1>
+        {/* 
           1. User submits the QuestionForm
           2. QuestionForm passes user input UP to App
           3. App makes the API call
           4. App passes the response into Response
           */}
-          <QuestionForm
-            onSubmit={this.handleQuestion}
-            matt={"here!"}
-            pam={"yo!"}
-          />
+        <QuestionForm
+          onSubmit={this.handleQuestion}
+          matt={"here!"}
+          pam={"yo!"}
+        />
 
-          <div>
-            {this.state.promptsCompletions.map((promptCompletion, index) => (
-              <div className="" key={index}>
-                {promptCompletion.prompt}
-                {promptCompletion.completion}
-              </div>
-            ))}
-          </div>
+        <div>
+          {this.state.promptsCompletions.map((promptCompletion, index) => (
+            <div className="" key={index}>
+              {promptCompletion.prompt}
+              {promptCompletion.completion}
+            </div>
+          ))}
+        </div>
 
-          {/* <Response /> */}
-        </header>
+        {/* <Response /> */}
       </div>
     );
   }
