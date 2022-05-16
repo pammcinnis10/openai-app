@@ -1,12 +1,21 @@
 import React from "react";
 import QuestionForm from "./QuestionForm";
-import Response from "./Response";
+import Completion from "./Completion";
 import openAI from "./openAi";
 
 class App extends React.Component {
   state = {
     // array of { prompt: 'hello?', completion: 'hi!' }
-    promptsCompletions: [],
+    promptsCompletions: [
+      {
+        prompt: "Where is Toronto?",
+        completion: "Toronto is located in the province of Ontario.",
+      },
+      {
+        prompt: "Where is Toledo?",
+        completion: "Toledo is located in the state of Ohio.",
+      },
+    ],
   };
 
   handleQuestion = (questionValue) => {
@@ -42,16 +51,15 @@ class App extends React.Component {
           pam={"yo!"}
         />
 
-        <div>
+        <ul>
           {this.state.promptsCompletions.map((promptCompletion, index) => (
-            <div className="" key={index}>
-              {promptCompletion.prompt}
-              {promptCompletion.completion}
-            </div>
+            <Completion
+              key={index}
+              prompt={promptCompletion.prompt}
+              completion={promptCompletion.completion}
+            />
           ))}
-        </div>
-
-        {/* <Response /> */}
+        </ul>
       </div>
     );
   }
