@@ -12,9 +12,15 @@ class Completion extends React.Component {
 
   render() {
     return (
-      <li className="item">
-        <div className="header">{this.props.prompt}</div>
-        <div>{this.props.completion}</div>{" "}
+      <li className="pb-2">
+        <div class="card">
+          <header class="card-header is-success">
+            <p class="card-header-title">{this.props.prompt}</p>
+          </header>
+          <div className="card-content">
+            <div className="content">{this.props.completion}</div>
+          </div>
+        </div>
       </li>
     );
   }

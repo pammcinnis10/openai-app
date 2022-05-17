@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-ul#remove-bullets {
+li {
   list-style-type: none;
   margin: 0;
   padding: 0;

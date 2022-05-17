@@ -40,32 +40,74 @@ class App extends React.Component {
   render() {
     // console.log(this.state);
     return (
-      <div className="container mx-auto">
-        <h1>Questions & Answers!</h1>
-        {/* 
+      <div className="container is-max-desktop">
+        <section className="section py-4">
+          <h1 className="title is-1">Who is Pam McInnis?</h1>
+          <div className="container">
+            <p>
+              Pam is an aspiring software developer located in Toronto, Ontario.
+            </p>
+            <p>
+              <span>About this app:</span> The OpenAI algorithm has been trained
+              to answer questions about Pam's experience related to frontend
+              development. Use the form below to ask questions about Pam.
+              Answers will be displayed below. Some important features of this
+              app include:
+              <ul>
+                <li>
+                  The OpenAI API key is stored so as not to expose it on the
+                  client side of the production code.
+                </li>
+                <li></li>
+              </ul>
+            </p>
+          </div>
+        </section>
+
+        <section className="section py-4 box">
+          <h2 className="title is-2">Questions</h2>
+
+          <div className="container">
+            {/* 
           1. User submits the QuestionForm
           2. QuestionForm passes user input UP to App
           3. App makes the API call
           4. App passes the response into Response
           */}
-        <QuestionForm
-          onSubmit={this.handleQuestion}
-          loading={this.state.formLoading}
-        />
-
-        <ul
-          id="remove-bullets"
-          className="ui celled list"
-          style={{ listStyleType: "none" }}
-        >
-          {this.state.promptsCompletions.map((promptCompletion, index) => (
-            <Completion
-              key={index}
-              prompt={promptCompletion.prompt}
-              completion={promptCompletion.completion}
+            <QuestionForm
+              onSubmit={this.handleQuestion}
+              loading={this.state.formLoading}
             />
-          ))}
-        </ul>
+          </div>
+        </section>
+
+        {/* display list of prompts and answers */}
+        <section className="section py-4">
+          <h2 className="title is-2">Answers</h2>
+          <div className="container">
+            <ul
+              id="remove-bullets"
+              className=""
+              style={{ listStyleType: "none" }}
+            >
+              {this.state.promptsCompletions.map((promptCompletion, index) => (
+                <Completion
+                  key={index}
+                  prompt={promptCompletion.prompt}
+                  completion={promptCompletion.completion}
+                />
+              ))}
+            </ul>
+          </div>
+        </section>
+        <footer className="footer">
+          <div className="container">
+            <ul className="">
+              <li className="item">LinkedIn</li>
+              <li className="item">Github</li>
+            </ul>
+          </div>
+        </footer>
       </div>
     );
   }

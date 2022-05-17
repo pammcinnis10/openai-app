@@ -10,6 +10,7 @@ class QuestionForm extends React.Component {
     this.presets = [
       { label: "Calgary", question: "Where is Calgary?" },
       { label: "California", question: "Where is California?" },
+      { label: "Tokyo", question: "Where is Tokyo?" },
     ];
   }
 
@@ -31,47 +32,48 @@ class QuestionForm extends React.Component {
     // console.log("render is run");
 
     return (
-      <div className="flex items-center py-2">
-        {this.presets.map((preset, index) => (
-          <PresetButton
-            key={index}
-            onClick={this.usePreset}
-            preset={preset.question}
-          >
-            {preset.label}
-          </PresetButton>
-        ))}
+      <div className="">
+        <div className="buttons">
+          {this.presets.map((preset, index) => (
+            <PresetButton
+              key={index}
+              onClick={this.usePreset}
+              preset={preset.question}
+            >
+              {preset.label}
+            </PresetButton>
+          ))}
+        </div>
 
-        <form className="ui form" onSubmit={this.handleSubmit}>
+        <form className="" onSubmit={this.handleSubmit}>
           <div className="field">
-            <label htmlFor="question" className="sr-only">
-              Question
+            <label htmlFor="question" className="label">
+              Ask Pam about her experience
             </label>
-            <input
-              id="question"
-              name="question"
-              type="text"
-              disabled={this.props.loading}
-              className={`ui input ${this.props.loading && "disabled"}`}
-              placeholder="Type your question here"
-              value={this.state.value}
-              onChange={this.handleChange}
-            ></input>
+            <div className="control">
+              <input
+                id="question"
+                required
+                minlength="10"
+                name="question"
+                type="text"
+                disabled={this.props.loading}
+                className="input"
+                placeholder="Eg. How long has Pam worked at Shopify?"
+                value={this.state.value}
+                onChange={this.handleChange}
+              ></input>
+            </div>
           </div>
-          <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+          <div className="">
             <button
               disabled={this.props.loading}
               type="submit"
-              className={`ui primary animated button ${
-                this.props.loading && "disabled"
-              }`}
+              className="button is-link"
               value="Submit"
             >
-              <div className="visible content">
+              <div className="">
                 {this.props.loading ? "Pam is thinking" : "Ask Pam"}
-              </div>
-              <div className="hidden content">
-                <i className="right arrow icon"></i>
               </div>
               {this.props.loading && <span></span>}
             </button>

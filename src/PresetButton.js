@@ -8,7 +8,12 @@ class PresetButton extends React.Component {
 
   render() {
     return (
-      <button type="button" onClick={this.handlePreset}>
+      <button
+        className="button"
+        style={{ width: "8rem" }}
+        type="button"
+        onClick={this.handlePreset}
+      >
         {this.props.children}
       </button>
     );
