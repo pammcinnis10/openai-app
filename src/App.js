@@ -9,16 +9,7 @@ class App extends React.Component {
     // formLoading indicates whether the API call is running
     formLoading: false,
     // promptsCompletions is an array of { prompt: 'hello?', completion: 'hi!' }
-    promptsCompletions: [
-      {
-        prompt: "Where is Toronto?",
-        completion: "Toronto is located in the province of Ontario.",
-      },
-      {
-        prompt: "Where is Toledo?",
-        completion: "Toledo is located in the state of Ohio.",
-      },
-    ],
+    promptsCompletions: [],
   };
 
   // Accepts a prompt (question) from form. Calls the OpenAI API.
@@ -48,19 +39,11 @@ class App extends React.Component {
           </h2>
           <div className="container">
             <p>
-              <span>About this app:</span> The OpenAI algorithm has been trained
-              to answer questions about Pam's experience related to frontend
-              development. Use the form below to ask questions about Pam.
-              Answers will be displayed below. Some important features of this
-              app include:
+              About this app: Pam is applying for a position as a Frontend
+              Developer Intern at Shopify, and she's trained the OpenAI
+              algorithm to tell you why she'd be great for the role! Use the
+              form below to ask questions about Pam.
             </p>
-            <ul>
-              <li>
-                The OpenAI API key is stored so as not to expose it on the
-                client side of the production code.
-              </li>
-              <li></li>
-            </ul>
           </div>
         </section>
 

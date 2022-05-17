@@ -12,9 +12,20 @@ class QuestionForm extends React.Component {
     // console.log("constructor is run");
 
     this.presets = [
-      { label: "Calgary", question: "Where is Calgary?" },
-      { label: "California", question: "Where is California?" },
-      { label: "Tokyo", question: "Where is Tokyo?" },
+      {
+        label: "Experience",
+        question: "Does Pam have software developer experience?",
+      },
+      {
+        label: "Projects",
+        question: "What software projects has Pam worked on?",
+      },
+      {
+        label: "Technologies",
+        question: "Where frontend technologies does Pam have experience with?",
+      },
+      { label: "Shopify", question: "What does Pam do at Shopify?" },
+      { label: "Fun Facts", question: "What are some fun facts about Pam?" },
     ];
   }
 
