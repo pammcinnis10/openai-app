@@ -41,7 +41,7 @@ class App extends React.Component {
     // console.log(this.state);
     return (
       <div className="container mx-auto">
-        <h1 className="text-xl font-bold">Questions & Answers!</h1>
+        <h1>Questions & Answers!</h1>
         {/* 
           1. User submits the QuestionForm
           2. QuestionForm passes user input UP to App
@@ -53,7 +53,11 @@ class App extends React.Component {
           loading={this.state.formLoading}
         />
 
-        <ul>
+        <ul
+          id="remove-bullets"
+          className="ui celled list"
+          style={{ listStyleType: "none" }}
+        >
           {this.state.promptsCompletions.map((promptCompletion, index) => (
             <Completion
               key={index}

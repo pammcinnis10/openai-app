@@ -12,9 +12,9 @@ class Completion extends React.Component {
 
   render() {
     return (
-      <li>
-        <div>{this.props.prompt}</div>
-        <div>{this.props.completion}</div>
+      <li className="item">
+        <div className="header">{this.props.prompt}</div>
+        <div>{this.props.completion}</div>{" "}
       </li>
     );
   }
