@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# Shopify Frontend Developer Intern application: who is Pam McInnis?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app uses the OpenAI algorithm to answer questions about Pam McInnis as they relate to her application for a position as a Frontend Developer Intern at Shopify.
+
+TODO: Link to live application
+TODO: "Click the preset buttons to ask some questions"
+TODO: "It's deployed using Cloudflare pages"
+
+## Cool Features
+
+### OpenAI API key injected at build time
+
+While developing this app I noticed OpenAI was crawling Github, looking for exposed API keys, and automatically cycling exposed keys. This caused my production app to stop working. Since I wanted this app to work when my application is reviewed, I needed to avoid storing my OpenAI API key in Github.
+
+As a solution, my API is injected into the app at build time by Cloudflare pages. Locally, I use a `.env.local` file to manage my key. Although this still exposes my API key on the frontend, it should be enough to avoid OpenAI determining my key has been leaked and triggering a key rotation thus making sure the Shopify team can try my app!
+
+### Algorithm is specialized to answer
+
+While developing this app I noticed OpenAI was crawling Github, looking for exposed API keys, and automatically cycling exposed keys. This caused my production app to stop working. Since I wanted this app to work when my application is reviewed, I needed to avoid storing my OpenAI API key in Github.
+
+As a solution, my API is injected into the app at build time by Cloudflare pages. Locally, I use a `.env.local` file to manage my key. Although this still exposes my API key on the frontend, it should be enough to avoid OpenAI determining my key has been leaked and triggering a key rotation thus making sure the Shopify team can try my app!
 
 ## Available Scripts
 
@@ -68,4 +86,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# openai-app
+
+# OpenAI-app

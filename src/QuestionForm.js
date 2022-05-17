@@ -1,6 +1,10 @@
 import React from "react";
 import PresetButton from "./PresetButton";
 
+// Manages a set of buttons that fill out the form with preset questions
+// Takes question as input
+// Sets state with the value of the input
+// On submit, runs a provided function
 class QuestionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -14,87 +18,86 @@ class QuestionForm extends React.Component {
     ];
   }
 
+  // implements a controlled form
   handleChange = (event) => {
-    console.log(event.target.value);
     this.setState({ value: event.target.value });
   };
 
+  // runs a provided function
   handleSubmit = (event) => {
     this.props.onSubmit(this.state.value);
+
     event.preventDefault();
   };
 
+  // sets the value of the input with preset prompt
   usePreset = (value) => {
     this.setState({ value: value });
   };
 
   render() {
-    // console.log("render is run");
-
     return (
-      <div className="">
-        <div className="buttons">
-          {this.presets.map((preset, index) => (
-            <PresetButton
-              key={index}
-              onClick={this.usePreset}
-              preset={preset.question}
-            >
-              {preset.label}
-            </PresetButton>
-          ))}
-        </div>
+      <section className="section py-4 box">
+        <h2 className="title is-2">Questions</h2>
 
-        <form className="" onSubmit={this.handleSubmit}>
-          <div className="field">
-            <label htmlFor="question" className="label">
-              Ask Pam about her experience
-            </label>
-            <div className="control">
-              <input
-                id="question"
-                required
-                minlength="10"
-                name="question"
-                type="text"
-                disabled={this.props.loading}
-                className="input"
-                placeholder="Eg. How long has Pam worked at Shopify?"
-                value={this.state.value}
-                onChange={this.handleChange}
-              ></input>
-            </div>
+        {/* Preset buttons */}
+        <div className="container">
+          <div className="buttons">
+            {this.presets.map((preset, index) => (
+              <PresetButton
+                key={index}
+                onClick={this.usePreset}
+                preset={preset.question}
+              >
+                {preset.label}
+              </PresetButton>
+            ))}
           </div>
-          <div className="">
-            <button
-              disabled={this.props.loading}
-              type="submit"
-              className="button is-link"
-              value="Submit"
-            >
-              <div className="">
-                {this.props.loading ? "Pam is thinking" : "Ask Pam"}
+
+          {/* Question form */}
+          <form className="" onSubmit={this.handleSubmit}>
+            <div className="field">
+              <label htmlFor="question" className="label">
+                Ask Pam about her experience
+              </label>
+              <div className="control">
+                <input
+                  id="question"
+                  required
+                  minLength="10"
+                  name="question"
+                  type="text"
+                  disabled={this.props.loading}
+                  className="input"
+                  placeholder="Eg. How long has Pam worked at Shopify?"
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                ></input>
               </div>
-              {this.props.loading && <span></span>}
-            </button>
-          </div>
-
-          {/* <input
-            className="appearance-none bg-transparent border-b border-teal-500 w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-
-          <button
-            className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
-            type="submit"
-            value="Submit"
-          >
-            Submit
-          </button> */}
-        </form>
-      </div>
+            </div>
+            <div className="">
+              {this.props.loading ? (
+                <button
+                  disabled
+                  type="submit"
+                  className="button is-link is-loading"
+                  value="Submit"
+                  style={{ width: "160px" }}
+                ></button>
+              ) : (
+                <button
+                  type="submit"
+                  className="button is-link"
+                  value="Submit"
+                  style={{ width: "160px" }}
+                >
+                  Ask about Pam
+                </button>
+              )}
+            </div>
+          </form>
+        </div>
+      </section>
     );
   }
 }

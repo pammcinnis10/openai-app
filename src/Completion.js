@@ -1,21 +1,13 @@
 import React from "react";
 
+// prompt and completion displayed as list items
 class Completion extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      items: [],
-    };
-  }
-
   render() {
     return (
       <li className="pb-2">
-        <div class="card">
-          <header class="card-header is-success">
-            <p class="card-header-title">{this.props.prompt}</p>
+        <div className="card">
+          <header className="card-header is-success">
+            <p className="card-header-title">{this.props.prompt}</p>
           </header>
           <div className="card-content">
             <div className="content">{this.props.completion}</div>
