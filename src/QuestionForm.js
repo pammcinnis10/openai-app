@@ -27,7 +27,7 @@ class QuestionForm extends React.Component {
       },
       {
         label: "Technologies",
-        question: "Where frontend technologies does Pam have experience with?",
+        question: "What frontend technologies does Pam have experience with?",
       },
       { label: "Shopify", question: "What does Pam do at Shopify?" },
       { label: "Fun Facts", question: "What are some fun facts about Pam?" },

@@ -1,8 +1,9 @@
 # Shopify Frontend Developer Intern application: Who is Pam McInnis?
 
+[Link to live application](https://openai-app.pages.dev/)
+
 This app uses the OpenAI algorithm to answer questions about Pam McInnis as they relate to her application for a position as a Frontend Developer Intern at Shopify.
 
-[Link to live application](https://openai-app.pages.dev/)
 Click the preset buttons to ask some questions about Pam and why she'd be great for the role!
 
 The app is deployed using Cloudflare pages.
@@ -17,4 +18,4 @@ As a solution, my API is injected into the app at build time by Cloudflare pages
 
 ### Algorithm is specialized to answer
 
-The OpenAI algorithm has been trained to answer questions about Pam and why she'd be great for the frontend developer internship at Shopify. You can ask preset questions using the buttons above the text input, and ask your own questions too!
+The OpenAI algorithm has been trained to answer questions about Pam and why she'd be great for the frontend developer internship at Shopify. You can ask preset questions using the buttons above the text input, and ask your own questions too! The algorithm is still learning and some of its answers might seem a bit funny. So unless the app is telling you what a great developer I am 🙂 it may be best to take its responses with a grain of salt.
