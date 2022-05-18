@@ -13,8 +13,13 @@ class QuestionForm extends React.Component {
 
     this.presets = [
       {
+        label: "Hire",
+        question:
+          "Would Pam be a good fit for the role of Frontend Developer Intern at Shopify?",
+      },
+      {
         label: "Experience",
-        question: "Does Pam have software developer experience?",
+        question: "What kind of software developer experience does Pam have?",
       },
       {
         label: "Projects",
@@ -80,7 +85,7 @@ class QuestionForm extends React.Component {
                   type="text"
                   disabled={this.props.loading}
                   className="input"
-                  placeholder="Eg. How long has Pam worked at Shopify?"
+                  placeholder="Example: How long has Pam worked at Shopify?"
                   value={this.state.value}
                   onChange={this.handleChange}
                 ></input>

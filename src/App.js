@@ -38,11 +38,14 @@ class App extends React.Component {
             An aspiring software developer located in Toronto, Ontario.
           </h2>
           <div className="container">
+            <h2 className="title is-3">About this app</h2>
             <p>
-              About this app: Pam is applying for a position as a Frontend
-              Developer Intern at Shopify, and she's trained the OpenAI
-              algorithm to tell you why she'd be great for the role! Use the
-              form below to ask questions about Pam.
+              The OpenAI algorithm has been trained to tell you why Pam would be
+              great for the role of Frontend Developer Intern at Shopify!
+            </p>
+            <p className="py-3">
+              Use the form below to ask questions about Pam, and check out the
+              preset questions using the buttons above the text input.
             </p>
           </div>
         </section>
