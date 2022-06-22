@@ -1,5 +1,5 @@
 // prompt and completion displayed as list items
-export default function Completion({ key, prompt, completion }) {
+export default function Completion({ prompt, completion }) {
   return (
     <li className="pb-2">
       <div className="card">

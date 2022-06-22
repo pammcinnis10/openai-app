@@ -63,7 +63,7 @@ class QuestionForm extends React.Component {
               <PresetButton
                 key={index}
                 onClick={this.usePreset}
-                preset={preset.question}
+                question={preset.question}
               >
                 {preset.label}
               </PresetButton>

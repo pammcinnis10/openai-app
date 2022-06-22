@@ -1,7 +1,7 @@
 // sets the value of the input to a preset question
-export default function PresetButton({ key, onClick, preset, props }) {
+export default function PresetButton({ onClick, question, children }) {
   const handlePreset = () => {
-    onClick(preset);
+    onClick(question);
   };
 
   return (
@@ -10,6 +10,8 @@ export default function PresetButton({ key, onClick, preset, props }) {
       style={{ width: "8rem" }}
       type="button"
       onClick={handlePreset}
-    ></button>
+    >
+      {children}
+    </button>
   );
 }
