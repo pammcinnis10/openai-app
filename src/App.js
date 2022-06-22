@@ -72,13 +72,15 @@ class App extends React.Component {
               className=""
               style={{ listStyleType: "none" }}
             >
-              {this.state.promptsCompletions.map((promptCompletion, index) => (
-                <Completion
-                  key={index}
-                  prompt={promptCompletion.prompt}
-                  completion={promptCompletion.completion}
-                />
-              ))}
+              {this.state.promptsCompletions.map((promptCompletion, index) => {
+                return (
+                  <Completion
+                    key={index}
+                    prompt={promptCompletion.prompt}
+                    completion={promptCompletion.completion}
+                  />
+                );
+              })}
             </ul>
           </div>
         </section>

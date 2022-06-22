@@ -1,24 +1,18 @@
-import React from "react";
-
 // prompt and completion displayed as list items
-class Completion extends React.Component {
-  render() {
-    return (
-      <li className="pb-2">
-        <div className="card">
-          <header className="card-header is-success">
-            <p className="card-header-title">{this.props.prompt}</p>
-          </header>
-          <div className="card-content">
-            <div className="content">{this.props.completion}</div>
-          </div>
+export default function Completion({ key, prompt, completion }) {
+  return (
+    <li className="pb-2">
+      <div className="card">
+        <header className="card-header is-success">
+          <p className="card-header-title">{prompt}</p>
+        </header>
+        <div className="card-content">
+          <div className="content">{completion}</div>
         </div>
-      </li>
-    );
-  }
+      </div>
+    </li>
+  );
 }
-
-export default Completion;
 
 // create form to input prompt
 // capture prompt as variable and insert it into body of fetch request
