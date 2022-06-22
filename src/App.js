@@ -5,22 +5,29 @@ import openAI from "./openAi";
 
 // Root component
 export default function App() {
-  const [formLoading, setFormLoading] = useState(false);
+  // promptsCompletions is an array of { prompt: 'hello?', completion: 'hi!'}
   // formLoading indicates whether the API call is running
-  const [promptsCompletions, setPromptsCompletions] = useState([]);
-  // promptsCompletions is an array of { prompt: 'hello?', completion: 'hi!' }
+  const [formData, setFormData] = useState({
+    promptsCompletions: [],
+    formLoading: false,
+  });
 
   // Accepts a prompt (question) from form. Calls the OpenAI API.
   // Updates state with an array of prompts/completions
   const handleQuestion = (prompt) => {
-    setFormLoading(true);
+    setFormData({
+      promptsCompletions: formData.promptsCompletions,
+      formLoading: true,
+    });
     openAI(prompt).then((completion) => {
       const obj = {
         prompt: prompt,
         completion: completion,
       };
-      setPromptsCompletions([obj, ...promptsCompletions]);
-      setFormLoading(false);
+      setFormData({
+        promptsCompletions: [obj, ...formData.promptsCompletions],
+        formLoading: false,
+      });
     });
   };
 
@@ -52,7 +59,7 @@ export default function App() {
           3. App makes the API call
           4. App passes the response into Completion
         */}
-      <QuestionForm onSubmit={handleQuestion} loading={formLoading} />
+      <QuestionForm onSubmit={handleQuestion} loading={formData.formLoading} />
 
       {/* display list of prompts and answers */}
       <section className="section py-4">
@@ -64,7 +71,7 @@ export default function App() {
             className=""
             style={{ listStyleType: "none" }}
           >
-            {promptsCompletions.map((promptCompletion, index) => {
+            {formData.promptsCompletions.map((promptCompletion, index) => {
               return (
                 <Completion
                   key={index}
