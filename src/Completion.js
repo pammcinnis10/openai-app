@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 // prompt and completion displayed as list items
 export default function Completion({ prompt, completion }) {
   return (
@@ -14,6 +16,7 @@ export default function Completion({ prompt, completion }) {
   );
 }
 
-// create form to input prompt
-// capture prompt as variable and insert it into body of fetch request
-// display prompt with answer in DOM - needs to be saved in a DOM element so it stays on the page when new prompts and responses are added
+Completion.propTypes = {
+  prompt: PropTypes.string.isRequired,
+  completion: PropTypes.string.isRequired,
+};

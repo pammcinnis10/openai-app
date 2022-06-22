@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PresetButton from "./PresetButton";
+import PropTypes from "prop-types";
 
 // Manages a set of buttons that fill out the form with preset questions
 // Takes question as input
@@ -111,3 +112,8 @@ export default function QuestionForm({ onSubmit, loading }) {
     </section>
   );
 }
+
+QuestionForm.propTypes = {
+  onSubmit: PropTypes.func,
+  loading: PropTypes.bool,
+};
